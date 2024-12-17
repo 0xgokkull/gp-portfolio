@@ -4,9 +4,10 @@ function ProjectCard({ name, description, link, image }) {
   return (
     <div className="border border-purple-900 p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow w-full max-w-sm mx-auto h-[400px]">
       {/* Image Section */}
-      <div
-        className="h-48 bg-cover bg-center rounded-lg"
-        style={{ backgroundImage: `url(${image})` }}
+      <img
+        src={image}
+        alt={name}
+        className="h-48 w-full object-cover rounded-lg"
       />
       <h3 className="text-2xl font-semibold text-purple-300 mt-4">{name}</h3>
       <p className="text-gray-300 mt-2">{description}</p>

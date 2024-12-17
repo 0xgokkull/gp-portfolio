@@ -121,7 +121,7 @@ const Home = () => {
         </div>
 
         {/* Animation Section */}
-        <div className="w-full lg:w-1/2 flex justify-center items-center mt-6 lg:mt-0">
+        <div className="w-full lg:w-1/2 flex justify-center items-center mt-6 lg:mb-36 lg:mt-0">
           <iframe
             src="https://lottie.host/embed/6eed80dc-7a32-4e1e-8ee7-7b9e3678feca/El25YvPRNL.lottie"
             className="w-full lg:h-[300px] h-[200px] opacity-80 hover:opacity-100 transition-opacity"
@@ -198,7 +198,7 @@ const Home = () => {
         <div className="w-full lg:w-1/2 flex justify-center items-center">
           <iframe
             src="https://lottie.host/embed/8a5d3bd7-3997-4d40-9c65-53b8a075e0cd/K3BROBW30C.lottie"
-            className="w-full lg:h-[400px] h-[250px] opacity-80 hover:opacity-100 transition-opacity"
+            className="w-full lg:h-[600px] h-[250px] opacity-80 hover:opacity-100 transition-opacity"
           ></iframe>
         </div>
       </div>
