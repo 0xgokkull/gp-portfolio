@@ -1,53 +1,57 @@
 import React from "react";
+import Techstack from "./Techstack";
+import Aboutcard from "./AboutCard";
+import laptopImg from "../assets/gp.jpeg";
+import Toolstack from "./Toolstack";
+import Github from "./Github";
 
-const About = () => {
-  const skills = [
-    "React",
-    "TypeScript",
-    "Node.js",
-    "Docker",
-    "Kubernetes",
-    "GraphQL",
-    "AI/ML",
-    "Cloud Native",
-  ];
-
+function About() {
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-4 animate-fadeIn">
-      <div className="max-w-4xl bg-neutral-900 rounded-2xl shadow-2xl p-8 md:p-12 border border-purple-900 animate-slideIn">
-        <h2 className="text-4xl font-bold mb-6 text-purple-500 text-center">
-          About My Digital Journey
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="space-y-4">
-            <p className="text-gray-300 animate-fadeIn">
-              A passionate technologist crafting elegant solutions at the
-              intersection of design and functionality.
-            </p>
-            <p className="text-gray-300 animate-fadeIn">
-              My mission is to transform complex challenges into intuitive
-              digital experiences that inspire and innovate.
-            </p>
+    <div className="py-10 lg:ml-20">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col lg:flex-row justify-center pb-12">
+          {/* About Card */}
+          <div className="md:w-7/12 pt-8 pb-12">
+            <h1 className="text-3xl md:text-4xl font-semibold text-white mb-6">
+              Know Who <span className="text-purple-500">I'M</span>
+            </h1>
+            <Aboutcard />
           </div>
-          <div>
-            <h3 className="text-2xl font-semibold mb-4 text-purple-500">
-              Tech Arsenal
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm transition-all duration-300 hover:bg-purple-800 hover:scale-105"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
+
+          {/* Image Section */}
+          <div className="md:w-5/12 flex items-center justify-center pb-12">
+            <img
+              src={laptopImg}
+              alt="about"
+              className="rounded-xl shadow-lg lg:w-60 lg:h-96 md:w-full md:h-auto"
+            />
           </div>
+        </div>
+
+        {/* Skillset Section */}
+        <div>
+          <h1 className="text-4xl font-semibold text-white mb-2 mt-12">
+            Professional <span className="text-purple-500">Skillset</span>
+          </h1>
+          <Techstack />
+        </div>
+
+        {/* Toolstack Section */}
+        <div>
+          <h1 className="text-4xl font-semibold text-white mb-2 mt-12">
+            <span className="text-purple-500">Tools</span> I use
+          </h1>
+          <Toolstack />
+        </div>
+        <div>
+          <h1 className="text-4xl font-semibold text-white mb-2 mt-12">
+            <span className="text-purple-500">Github</span> Status
+          </h1>
+          <Github />
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default About;
