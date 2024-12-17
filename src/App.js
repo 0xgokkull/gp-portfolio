@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer"; // Import Footer Component
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -27,12 +28,18 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white flex flex-col">
+      {/* Navigation Bar */}
       <Navigation
         activeSection={activeSection}
         setActiveSection={setActiveSection}
       />
-      <div className="pt-16">{renderSection()}</div>
+
+      {/* Page Content */}
+      <div className="flex-grow pt-16">{renderSection()}</div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
