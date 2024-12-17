@@ -21,13 +21,32 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black text-gray-300 py-8 px-4">
-      {/* Bottom Section */}
-      <div className="mt-8 text-center border-t border-purple-900 pt-4 text-sm">
-        <p className="text-gray-500 animate-pulse">
-          &copy; {new Date().getFullYear()} GP. All rights reserved.
-              </p>
-              
+    <footer className="bg-black text-gray-300 py-5 px-4 mt-8 text-center border-t border-purple-900">
+      <div className="lg:ml-20 lg:mr-20 flex justify-between items-center">
+        <div className="flex-shrink-0">
+          <h1 className="text-2xl font-bold text-purple-500 tracking-wider animate-pulse">
+            Developed by GP
+          </h1>
+        </div>
+        {/* Bottom Section */}
+        <div className="text-sm">
+          <p className="text-gray-500 animate-pulse">
+            &copy; {new Date().getFullYear()} GP. All rights reserved.
+          </p>
+        </div>
+        <div className="flex space-x-4">
+          {socialLinks.map(({ icon: Icon, href, hoverColor }, index) => (
+            <a
+              key={index}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`transition-all duration-300 transform hover:scale-125 hover:rotate-6 p-2 rounded-full ${hoverColor}`}
+            >
+              <Icon size={30} />
+            </a>
+          ))}
+        </div>
       </div>
     </footer>
   );

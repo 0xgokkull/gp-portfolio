@@ -7,7 +7,7 @@ import Github from "./Github";
 
 function About() {
   return (
-    <div className="py-10 lg:ml-20">
+    <div className="py-10 lg:ml-20 lg:mr-20">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-center pb-12">
           {/* About Card */}

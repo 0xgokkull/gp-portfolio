@@ -29,9 +29,9 @@ const Home = () => {
   return (
     <div>
       {/* Starting Page Section */}
-      <div className="relative min-h-screen bg-black flex flex-col md:flex-row justify-center md:justify-between items-center text-white">
+      <div className="relative min-h-screen bg-black flex flex-col md:flex-row justify-center md:justify-between items-center text-white lg:ml-20 lg:mr-20">
         {/* Content Section */}
-        <div className="lg:ml-20 w-full md:w-1/2 flex flex-col justify-center items-start h-full px-6 py-6 text-left">
+        <div className=" w-full md:w-1/2 flex flex-col justify-center items-start h-full px-6 py-6 text-left">
           <h1
             className={` sm:block text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-purple-500 transition-all duration-500 ${
               isHovered ? "tracking-widest" : ""
@@ -81,7 +81,7 @@ const Home = () => {
       </div>
 
       {/* Introduction Section */}
-      <div className="flex flex-col lg:flex-row w-full h-full px-8 py-8 space-y-8 lg:space-y-0 lg:space-x-0 items-center justify-center lg:ml-20">
+      <div className="flex flex-col lg:flex-row w-full h-full px-8 py-8 space-y-8 lg:space-y-0 lg:space-x-0 items-center justify-center lg:ml-20 lg:mr-20">
         {/* Introduction Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center items-start text-left">
           <h2 className="text-4xl lg:text-5xl font-bold text-purple-500 mb-6">
