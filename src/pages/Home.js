@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { Github, Linkedin, Mail, Code, Cpu, Building } from "lucide-react";
-import gp from "../assets/owner.jpeg"
+import gp from "../assets/gp.jpeg"
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -135,7 +135,7 @@ const Home = () => {
 
         {/* Image Section */}
         <div className="w-full lg:w-1/2 flex justify-center items-center py-8">
-          <img src={gp} className="w-80 h-80 bg-gray-700 rounded-full"></img>
+          <img src={gp} className="w-64 h-80 bg-gray-700 rounded-full"></img>
         </div>
       </div>
     </div>
