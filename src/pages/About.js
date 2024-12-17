@@ -39,13 +39,13 @@ function About() {
         {/* Toolstack Section */}
         <div>
           <h1 className="text-4xl font-semibold text-white mb-2 mt-12">
-            <span className="text-purple-500">Tools</span> I use
+            Tools<span className="text-purple-500"> I use</span>
           </h1>
           <Toolstack />
         </div>
         <div>
           <h1 className="text-4xl font-semibold text-white mb-2 mt-12">
-            <span className="text-purple-500">Github</span> Status
+            Github<span className="text-purple-500"> Status</span>
           </h1>
           <Github />
         </div>

@@ -1,57 +1,105 @@
 import React from "react";
+import ProjectCard from "./ProjectCard";
 
-const projects = [
-  {
-    name: "Portfolio Website",
-    description:
-      "A fully responsive and modern portfolio showcasing my projects and skills.",
-    link: "https://github.com/your-portfolio",
-  },
-  {
-    name: "E-commerce App",
-    description:
-      "An e-commerce platform with a robust cart system, payment integration, and admin panel.",
-    link: "https://github.com/ecommerce-app",
-  },
-  {
-    name: "AI Chatbot",
-    description:
-      "An AI-driven chatbot capable of understanding natural language and providing instant responses.",
-    link: "https://github.com/ai-chatbot",
-  },
-];
+function Projects() {
+  const projects = [
+    {
+      name: "BlockInsure",
+      description: "A decentralized platform to apply for the insurance.",
+      link: "https://github.com/gokkull-15/Blockinsure-V1.git",
+      image: "https://via.placeholder.com/400x200", // Example image
+    },
+    {
+      name: "DevMa",
+      description: "A decentalized platform that combines Devfolio and Luma.",
+      link: "https://github.com/gokkull-15/devma-v1.git",
+      image: "https://via.placeholder.com/400x200", // Example image
+    },
+    {
+      name: "MediCO",
+      description:
+        "A platform to create interaction between the patient and doctor through onchain.",
+      link: "https://github.com/gokkull-15/medico-app.git",
+      image: "https://via.placeholder.com/400x200", // Example image
+    },
+    {
+      name: "ShopX",
+      description:
+        "A decentralized platform for buying and selling ebooks through onchain.",
+      link: "https://github.com/gokkull-15/shopx-app.git",
+      image: "https://via.placeholder.com/400x200", // Example image
+    },
+    {
+      name: "TRSA",
+      description:
+        "A social platform to organise events and view the skaters around the region.",
+      link: "https://github.com/Sunil0881/TRSA.git",
+      image: "https://via.placeholder.com/400x200", // Example image
+    },
+    {
+      name: "Mahalakshmi Builders",
+      description: "A real-estate side build for my client.",
+      link: "https://github.com/gokkull-15/mahalakshmi-app.git",
+      image: "https://via.placeholder.com/400x200", // Example image
+    },
+    {
+      name: "Testimonial",
+      description: "A website to get testimonials from my clients.",
+      link: "https://github.com/gokkull-15/testimonials-app.git",
+      image: "https://via.placeholder.com/400x200", // Example image
+    },
+    {
+      name: "Imdb-next",
+      description: "Cloned version of IMDB using nextjs.",
+      link: "https://github.com/gokkull-15/imdb-next.git",
+      image: "https://via.placeholder.com/400x200", // Example image
+    },
+    {
+      name: "Wallet-connect",
+      description: "A mini project to connect web3 wallet.",
+      link: "https://github.com/gokkull-15/wallet-connect.git",
+      image: "https://via.placeholder.com/400x200", // Example image
+    },
+    {
+      name: "Landing Page",
+      description: "A landing page for musical band for my client.",
+      link: "https://github.com/gokkull-15/Landipage.git",
+      image: "https://via.placeholder.com/400x200", // Example image
+    },
+    {
+      name: "Qr code",
+      description: "Mini project that generates qr code for the given links.",
+      link: "https://github.com/gokkull-15/Qr-code.git",
+      image: "https://via.placeholder.com/400x200", // Example image
+    },
+    {
+      name: "Billing System",
+      description: "A fully functioning billing system for my client.",
+      link: "https://github.com/gokkull-15/billing-system-app.git",
+      image: "https://via.placeholder.com/400x200", // Example image
+    },
+  ];
 
-const Projects = () => {
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-4 animate-fadeIn">
-      <div className="max-w-5xl bg-neutral-900 rounded-2xl shadow-2xl p-8 md:p-12 border border-purple-900 animate-slideIn">
-        <h2 className="text-4xl font-bold mb-6 text-purple-500 text-center">
+    <div className="min-h-screen flex justify-center items-center bg-black p-4">
+      <div className="max-w-7xl w-full px-4">
+        <h2 className="text-4xl font-bold text-purple-500 text-center mb-12">
           Projects
         </h2>
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
+            <ProjectCard
               key={index}
-              className="bg-purple-900 p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
-            >
-              <h3 className="text-2xl font-semibold text-purple-300">
-                {project.name}
-              </h3>
-              <p className="text-gray-300 mt-2">{project.description}</p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-4 bg-purple-700 hover:bg-purple-600 text-white px-4 py-2 rounded-md transition-colors"
-              >
-                View Project
-              </a>
-            </div>
+              name={project.name}
+              description={project.description}
+              link={project.link}
+              image={project.image}
+            />
           ))}
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Projects;

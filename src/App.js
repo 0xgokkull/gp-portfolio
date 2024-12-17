@@ -3,9 +3,9 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer"; // Import Footer Component
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Projects from "./pages/Projects";
 import Resume from "./pages/Resume";
 import Certificates from "./pages/Certificates";
+import Projects from "./pages/Projects";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");

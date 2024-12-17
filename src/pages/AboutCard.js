@@ -9,11 +9,11 @@ function AboutCard() {
         <blockquote className="blockquote mb-0">
           <p className="text-justify text-xl md:text-2xl">
             Hi Everyone, I am{" "}
-            <span className="text-purple-500 font-bold text-2xl md:text-3xl">
+            <span className="text-white font-bold text-2xl md:text-3xl">
               Gokul Priyan S
             </span>{" "}
             from{" "}
-            <span className="text-purple-500 font-bold text-2xl md:text-3xl">
+            <span className="text-purple-300 font-bold text-2xl md:text-3xl">
               Chennai, India.
             </span>
             <br />
@@ -25,24 +25,32 @@ function AboutCard() {
           </p>
           <ul className="list-disc pl-5 mt-4 space-y-3 text-lg md:text-xl text-gray-200">
             <li className="flex items-center space-x-2">
-              <ImPointRight className="text-purple-500" />
-              <span>Participating in Hackathons</span>
+              <ImPointRight className="text-purple-600" />
+              <span className="text-white font-semibold">
+                Participating in Hackathons
+              </span>
             </li>
             <li className="flex items-center space-x-2">
-              <ImPointRight className="text-purple-500" />
-              <span>Mentoring and Teaching</span>
+              <ImPointRight className="text-purple-600" />
+              <span className="text-white font-semibold">
+                Mentoring and Teaching
+              </span>
             </li>
             <li className="flex items-center space-x-2">
-              <ImPointRight className="text-purple-500" />
-              <span>Exploring Blockchain Technology</span>
+              <ImPointRight className="text-purple-600" />
+              <span className="text-white font-semibold">
+                Exploring Blockchain Technology
+              </span>
             </li>
             <li className="flex items-center space-x-2">
-              <ImPointRight className="text-purple-500" />
-              <span>Involving in sports activities</span>
+              <ImPointRight className="text-purple-600" />
+              <span className="text-white font-semibold">
+                Involving in sports activities
+              </span>
             </li>
           </ul>
 
-          <p className="text-purple-500 font-semibold text-xl md:text-4xl mt-4">
+          <p className="text-purple-400 font-semibold text-xl md:text-4xl mt-4">
             "Live and Let Live !"
           </p>
           <footer className="blockquote-footer text-gray-400 text-base md:text-sm mt-4 lg:ml-72 ml-44">
