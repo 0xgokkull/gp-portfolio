@@ -31,7 +31,7 @@ function Toolstack() {
           }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="lg:text-9xl text-8xl m-4 sm:m-2 p-3 opacity-90 border border-purple-400 rounded-md shadow-lg transition-transform duration-300 hover:border-purple-500"
+          className="lg:text-9xl text-7xl m-4 sm:m-2 p-3 opacity-90 border border-purple-400 rounded-md shadow-lg transition-transform duration-300 hover:border-purple-500"
         >
           {icon}
         </motion.div>

@@ -87,7 +87,7 @@ const Home = () => {
         {/* Content Section */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center items-start text-left space-y-4 px-4 py-6">
           <h1
-            className={`text-4xl md:text-5xl font-bold text-purple-500 transition-all duration-500 ${
+            className={`text-3xl md:text-5xl font-bold text-purple-500 transition-all duration-500 ${
               isNameHovered && window.innerWidth >= 768 ? "tracking-widest" : ""
             }`}
             onMouseEnter={() => {
