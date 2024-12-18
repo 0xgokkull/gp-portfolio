@@ -8,7 +8,25 @@ const Resume = () => {
         <h2 className="text-4xl font-bold mb-6 text-purple-500 text-center">
           Resume
         </h2>
-        <div className="h-[80vh] overflow-auto border border-purple-700 rounded-md">
+
+        {/* For mobile screens, show the iframe and the download button */}
+        <div className="block md:hidden text-center mb-6">
+          <iframe
+            src="https://lottie.host/embed/2a070129-db6c-4cc5-8f98-3e8a733ea0b7/6Z1wdFnuEb.lottie"
+            className="w-full h-48 rounded-lg mb-4"
+            title="Lottie Animation"
+          ></iframe>
+          <a
+            href={resumePDF}
+            download
+            className="bg-purple-500 text-white px-6 py-2 rounded-md text-xl"
+          >
+            Download Resume
+          </a>
+        </div>
+
+        {/* For larger screens, show the PDF */}
+        <div className="h-[80vh] overflow-auto border border-purple-700 rounded-md hidden md:block">
           <object
             data={resumePDF}
             type="application/pdf"
