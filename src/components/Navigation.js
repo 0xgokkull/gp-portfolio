@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Star, Code, FileText, User, Home } from "lucide-react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
-const Navigation = ({ activeSection, setActiveSection }) => {
+const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const sections = [
-    { name: "Home", icon: Home },
-    { name: "About", icon: User },
-    { name: "Projects", icon: Code },
-    { name: "Resume", icon: FileText },
-    { name: "Certificates", icon: Star },
+    { name: "Home", icon: Home, path: "/" },
+    { name: "About", icon: User, path: "/about" },
+    { name: "Projects", icon: Code, path: "/projects" },
+    { name: "Resume", icon: FileText, path: "/resume" },
+    { name: "Certificates", icon: Star, path: "/certificates" },
   ];
 
   // Add scroll effect
@@ -48,8 +49,8 @@ const Navigation = ({ activeSection, setActiveSection }) => {
     };
   }, [isMenuOpen]);
 
-  const handleMenuItemClick = (sectionName) => {
-    setActiveSection(sectionName.toLowerCase());
+  // Close the mobile menu when a menu item is clicked
+  const closeMenu = () => {
     setIsMenuOpen(false);
   };
 
@@ -89,30 +90,22 @@ const Navigation = ({ activeSection, setActiveSection }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {sections.map(({ name, icon: Icon }) => (
-                <button
+            <div className="ml-10 flex items-center space-x-6">
+              {sections.map(({ name, icon: Icon, path }) => (
+                <Link
                   key={name}
-                  onClick={() => handleMenuItemClick(name)}
+                  to={path} // Use Link to navigate between pages
                   className={`group flex items-center px-3 py-2 rounded-md 
                     text-sm font-medium transition-all duration-300 
-                    ${
-                      activeSection === name.toLowerCase()
-                        ? "bg-purple-800 text-white scale-105 shadow-lg"
-                        : "text-gray-300 hover:bg-purple-900 hover:text-white hover:scale-105"
-                    }`}
+                    hover:border-b-2 hover:border-purple-500`}
                 >
                   <Icon
                     size={16}
                     className={`mr-2 transition-colors duration-300 
-                      ${
-                        activeSection === name.toLowerCase()
-                          ? "text-white"
-                          : "text-gray-400 group-hover:text-white"
-                      }`}
+                      text-gray-400 group-hover:text-white`}
                   />
                   {name}
-                </button>
+                </Link>
               ))}
             </div>
           </div>
@@ -128,30 +121,23 @@ const Navigation = ({ activeSection, setActiveSection }) => {
                 : "-translate-y-full opacity-0 invisible"
             } bg-black/95 backdrop-blur-sm`}
         >
-          <div className="px-4 pt-2 pb-3 space-y-1">
-            {sections.map(({ name, icon: Icon }) => (
-              <button
+          <div className="px-6 pt-4 pb-3 space-y-2">
+            {sections.map(({ name, icon: Icon, path }) => (
+              <Link
                 key={name}
-                onClick={() => handleMenuItemClick(name)}
-                className={`w-full flex items-center text-left px-3 py-3 rounded-md 
+                to={path} // Use Link to navigate between pages
+                className={`w-full flex items-center text-left px-4 py-3 rounded-md 
                   text-base font-medium transition-all duration-300 
-                  ${
-                    activeSection === name.toLowerCase()
-                      ? "bg-purple-800 text-white"
-                      : "text-gray-300 hover:bg-purple-900 hover:text-white"
-                  }`}
+                  hover:border-b-2 hover:border-purple-500`}
+                onClick={closeMenu} // Close menu when a link is clicked
               >
                 <Icon
                   size={18}
                   className={`mr-3 transition-colors 
-                    ${
-                      activeSection === name.toLowerCase()
-                        ? "text-white"
-                        : "text-gray-400"
-                    }`}
+                    text-gray-400 group-hover:text-white`}
                 />
                 {name}
-              </button>
+              </Link>
             ))}
           </div>
         </div>

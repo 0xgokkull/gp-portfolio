@@ -1,7 +1,9 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import {
   Github,
   Linkedin,
+  Twitter,
   Mail,
   ArrowDownRight,
   Sparkles,
@@ -43,21 +45,28 @@ const Home = () => {
     () => [
       {
         icon: Github,
-        href: "https://github.com",
+        href: "https://github.com/gokkull-15",
         hoverColor: "hover:text-white",
         bgHover: "hover:bg-gray-800",
         tooltip: "GitHub Profile",
       },
       {
         icon: Linkedin,
-        href: "https://linkedin.com",
+        href: "https://www.linkedin.com/in/gokkull-s",
         hoverColor: "hover:text-white",
         bgHover: "hover:bg-blue-900",
         tooltip: "LinkedIn Profile",
       },
       {
+        icon: Twitter,
+        href: "https://x.com/Gokkull15",
+        hoverColor: "hover:text-white",
+        bgHover: "hover:bg-blue-900",
+        tooltip: "Twitter Profile",
+      },
+      {
         icon: Mail,
-        href: "mailto:alex@digitalrealm.com",
+        href: "mailto:gokkull04@gmail.com",
         hoverColor: "hover:text-white",
         bgHover: "hover:bg-red-900",
         tooltip: "Send Email",
@@ -67,7 +76,12 @@ const Home = () => {
   );
 
   return (
-    <div className="bg-black text-white">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="bg-black text-white"
+    >
       {/* Hero Section */}
       <div className="relative min-h-screen bg-black flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:ml-20 lg:mr-20 p-4">
         {/* Content Section */}
@@ -105,7 +119,7 @@ const Home = () => {
             </span>
           </p>
           {/* Social Links */}
-          <div className="mt-8 flex space-x-6">
+          <div className="mt-8 flex space-x-4">
             {socialLinks.map(({ icon: Icon, href, hoverColor }, index) => (
               <a
                 key={index}
@@ -202,7 +216,7 @@ const Home = () => {
           ></iframe>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

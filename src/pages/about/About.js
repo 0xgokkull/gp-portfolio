@@ -1,7 +1,7 @@
 import React from "react";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
-import laptopImg from "../assets/gp.jpeg";
+import gp from "../../assets/gp.jpeg";
 import Toolstack from "./Toolstack";
 import Github from "./Github";
 
@@ -21,7 +21,7 @@ function About() {
           {/* Image Section */}
           <div className="md:w-5/12 flex items-center justify-center pb-12">
             <img
-              src={laptopImg}
+              src={gp}
               alt="about"
               className="rounded-xl shadow-lg lg:w-60 lg:h-96 md:w-full md:h-auto"
             />

@@ -1,25 +1,32 @@
 import React from "react";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, Heart } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com",
+      href: "https://github.com/gokkull-15",
       hoverColor: "hover:text-white",
       bgHover: "hover:bg-gray-800",
       tooltip: "GitHub Profile",
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/gokkull-s",
       hoverColor: "hover:text-white",
       bgHover: "hover:bg-blue-900",
       tooltip: "LinkedIn Profile",
     },
     {
+      icon: Twitter,
+      href: "https://x.com/Gokkull15",
+      hoverColor: "hover:text-white",
+      bgHover: "hover:bg-blue-900",
+      tooltip: "Twitter Profile",
+    },
+    {
       icon: Mail,
-      href: "mailto:alex@digitalrealm.com",
+      href: "mailto:gokkull04@gmail.com",
       hoverColor: "hover:text-white",
       bgHover: "hover:bg-red-900",
       tooltip: "Send Email",
