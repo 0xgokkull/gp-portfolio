@@ -93,7 +93,7 @@ function Projects() {
   ];
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-black p-4">
+    <div className="min-h-screen flex justify-center items-center p-4">
       <div className="max-w-7xl w-full px-4">
         <h2 className="text-4xl font-bold text-purple-500 text-center mb-12">
           Projects

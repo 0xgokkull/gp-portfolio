@@ -11,7 +11,7 @@ function CertificateCard({ name, description, image }) {
         scale: 1.05,
         boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
       }}
-      className="border border-purple-900 p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow w-full max-w-sm mx-auto h-[350px]"
+      className="bg-neutral-950 border border-purple-900 p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow w-full max-w-sm mx-auto h-[350px]"
     >
       {/* Image Section */}
       <img

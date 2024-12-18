@@ -7,16 +7,20 @@ import Resume from "./pages/Resume";
 import CertificatesPage from "./pages/certificates/CertificatesPage";
 import Projects from "./pages/projects/Projects";
 import Home from "./pages/Home";
+import ParticlesComponent from "./components/Particle"; // Assuming this is the file where the Particles component is defined
 
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-black text-white flex flex-col">
+      <div className="relative min-h-screen bg-black text-white flex flex-col">
+        {/* Particles background */}
+        <ParticlesComponent id="particles" />
+
         {/* Navigation Bar */}
         <Navigation />
 
         {/* Page Content */}
-        <div className="flex-grow pt-16">
+        <div className="flex-grow pt-16 z-10 relative">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

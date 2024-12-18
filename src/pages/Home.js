@@ -80,10 +80,10 @@ const Home = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="bg-black text-white"
+      className=" text-white"
     >
       {/* Hero Section */}
-      <div className="relative min-h-screen bg-black flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:ml-20 lg:mr-20 p-4">
+      <div className="relative min-h-screen flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:ml-20 lg:mr-20 p-4">
         {/* Content Section */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center items-start text-left space-y-4 px-4 py-6">
           <h1
