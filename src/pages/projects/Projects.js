@@ -49,7 +49,7 @@ function Projects() {
       image: trsa, // Example image
     },
     {
-      name: "Mahalakshmi Builders",
+      name: "Mahalakshmi build",
       description: "A real-estate side build for my client.",
       link: "https://github.com/gokkull-15/mahalakshmi-app.git",
       image: mahalakshmi, // Example image
