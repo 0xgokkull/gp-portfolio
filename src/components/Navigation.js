@@ -58,8 +58,8 @@ const Navigation = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${
         isScrolled
-          ? "bg-transparent backdrop-blur-sm shadow-2xl border-b border-purple-900/50"
-          : "bg-transparent"
+          ? "bg-gray-800 backdrop-blur-sm shadow-2xl border-b border-purple-900/50"
+          : "bg-gray-800"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -119,7 +119,7 @@ const Navigation = () => {
               isMenuOpen
                 ? "translate-y-0 opacity-100 visible"
                 : "-translate-y-full opacity-0 invisible"
-            } bg-black/95 backdrop-blur-sm`}
+            } bg-gray-800 backdrop-blur-sm`}
         >
           <div className="px-6 pt-4 pb-3 space-y-2">
             {sections.map(({ name, icon: Icon, path }) => (

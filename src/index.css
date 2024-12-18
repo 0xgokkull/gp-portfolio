@@ -10,3 +10,16 @@
   height: 100%;
   z-index: -1; /* Ensure particles are behind the content */
 }
+
+/* index.css or App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); /* Example: Poppins font */
+
+body {
+  font-family: 'Poppins', sans-serif; /* Replace with your desired font */
+  color: #e4e4e7; /* Optional: Set default text color */
+  background-color: #21253d; /* Optional: Set default background color */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+

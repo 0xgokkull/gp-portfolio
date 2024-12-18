@@ -34,7 +34,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="text-gray-300 py-6 px-4 mt-4 border-t border-purple-900/50 z-20 relative">
+    <footer className="bg-gray-800 text-gray-300 py-6 px-4 mt-4 border-t border-purple-900/50 z-20 relative">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 px-4 lg:px-8">
           {/* Developer Info */}
