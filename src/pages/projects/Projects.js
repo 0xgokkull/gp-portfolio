@@ -12,9 +12,16 @@ import trsa from "../../assets/trsa.png";
 import landingpage from "../../assets/landingpage.png";
 import web3 from "../../assets/web3.png";
 import qr from "../../assets/qr.png";
+import chained from "../../assets/chained.png";
 
 function Projects() {
   const projects = [
+    {
+      name: "ChainED",
+      description: "A decentralized learning platform with AI assistant.",
+      link: "https://github.com/gokkull-15/ChainEdu.git",
+      image: chained, // Example image
+    },
     {
       name: "BlockInsure",
       description: "A decentralized platform to apply for the insurance.",
@@ -93,12 +100,12 @@ function Projects() {
   ];
 
   return (
-    <div className="min-h-screen flex justify-center items-center p-4">
-      <div className="max-w-7xl w-full px-4">
-        <h2 className="text-4xl font-bold text-purple-500 text-center mb-12">
+    <div className="flex items-center justify-center min-h-screen p-4">
+      <div className="w-full px-4 max-w-7xl">
+        <h2 className="mb-12 text-4xl font-bold text-center text-purple-500">
           Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
