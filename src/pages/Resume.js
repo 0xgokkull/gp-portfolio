@@ -1,5 +1,5 @@
 import React from "react";
-import resumePDF from "../assets/gp-resume.pdf"; // Import the PDF file
+import resumePDF from "../assets/gp-resume-june.pdf"; // Import the PDF file
 
 const Resume = () => {
   return (
