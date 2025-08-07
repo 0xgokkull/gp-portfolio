@@ -6,10 +6,16 @@ import js from "../../assets/js.jpeg";
 import nft from "../../assets/nft.jpeg";
 import nm from "../../assets/nm.jpeg";
 import mongo from "../../assets/mongo.jpeg";
+import bestperformer from "../../assets/best_performer.jpg";
 
 function CertificatesPage() {
   // List of Certificates (Example Data)
   const certificates = [
+    {
+      name: "SecureDapp",
+      description: "Best Quarter Performer in internship.",
+      image: bestperformer,
+    },
     {
       name: "CodSoft",
       description: "Internship certificate for frontend development.",
