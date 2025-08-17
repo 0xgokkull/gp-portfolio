@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Star, Code, FileText, User, Home } from "lucide-react";
+import { Menu, X, Star, Code, FileText, User, Home, Heart } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
@@ -69,10 +69,11 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0 group relative">
+          <Link to="/" className="flex-shrink-0 group relative inline-flex items-center gap-2">
             <span className="absolute -inset-1 rounded-lg opacity-0 group-hover:opacity-100 blur-lg bg-gradient-to-r from-purple-600/40 via-fuchsia-500/30 to-pink-500/20 transition" />
-            <h1 className="relative text-xl sm:text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-fuchsia-200 to-pink-300 drop-shadow-[0_0_6px_rgba(168,85,247,0.4)] group-hover:tracking-wider transition-all">
-              GP
+            <h1 className="relative flex items-center gap-1 text-xl sm:text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-fuchsia-200 to-pink-300 drop-shadow-[0_0_6px_rgba(168,85,247,0.4)] group-hover:tracking-wider transition-all">
+              <span>GP</span>
+              <Heart size={18} className="text-fuchsia-300 group-hover:scale-110 transition-transform animate-pulse" />
             </h1>
           </Link>
 
