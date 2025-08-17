@@ -19,8 +19,8 @@ module.exports = {
           '50%': { backgroundPosition: '100% 50%' }
         },
         neonPulse: {
-          '0%,100%': { filter: 'drop-shadow(0 0 4px #a855f7) drop-shadow(0 0 12px #d946ef)' },
-          '50%': { filter: 'drop-shadow(0 0 8px #d946ef) drop-shadow(0 0 24px #a855f7)' }
+          '0%,100%': { filter: 'drop-shadow(0 0 4px #0ea5e9) drop-shadow(0 0 12px #38bdf8)' }, // cyan-600 & sky-400
+          '50%': { filter: 'drop-shadow(0 0 8px #38bdf8) drop-shadow(0 0 24px #0ea5e9)' }
         },
         floatSlow: {
           '0%,100%': { transform: 'translateY(-4px)' },

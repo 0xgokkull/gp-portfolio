@@ -60,9 +60,9 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out backdrop-blur-xl border-b ${
+  className={`fixed top-0 w-full z-40 transition-all duration-300 ease-in-out backdrop-blur-xl border-b ${
         isScrolled
-          ? "bg-[#141627]/85 border-purple-800/40 shadow-[0_0_25px_-8px_rgba(168,85,247,0.35)]"
+          ? "bg-[#0c1322]/85 border-cyan-600/30 shadow-[0_0_25px_-8px_rgba(56,189,248,0.35)]"
           : "bg-transparent border-transparent"
       }`}
     >
@@ -70,10 +70,10 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0 group relative inline-flex items-center gap-2">
-            <span className="absolute -inset-1 rounded-lg opacity-0 group-hover:opacity-100 blur-lg bg-gradient-to-r from-purple-600/40 via-fuchsia-500/30 to-pink-500/20 transition" />
-            <h1 className="relative flex items-center gap-1 text-xl sm:text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-fuchsia-200 to-pink-300 drop-shadow-[0_0_6px_rgba(168,85,247,0.4)] group-hover:tracking-wider transition-all">
+            <span className="absolute -inset-1 rounded-lg opacity-0 group-hover:opacity-100 blur-lg bg-gradient-to-r from-cyan-600/40 via-sky-500/30 to-blue-500/20 transition" />
+            <h1 className="relative flex items-center gap-1 text-xl sm:text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-sky-300 via-cyan-200 to-blue-200 drop-shadow-[0_0_6px_rgba(56,189,248,0.45)] group-hover:tracking-wider transition-all">
               <span>GP</span>
-              <Heart size={18} className="text-fuchsia-300 group-hover:scale-110 transition-transform animate-pulse" />
+              <Heart size={18} className="text-cyan-300 group-hover:scale-110 transition-transform animate-pulse" />
             </h1>
           </Link>
 
@@ -86,13 +86,13 @@ const Navigation = () => {
                   to={path}
                   className={`relative inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium tracking-wide transition-all group overflow-hidden border ${
                     isActive(path)
-                      ? "border-fuchsia-400/60 bg-purple-900/30 shadow-[0_0_18px_-4px_rgba(217,70,239,0.4)]"
-                      : "border-purple-600/20 hover:border-fuchsia-400/50 bg-purple-900/10 hover:bg-purple-900/20"
+                      ? "border-sky-400/60 bg-slate-900/40 shadow-[0_0_18px_-4px_rgba(56,189,248,0.45)]"
+                      : "border-cyan-600/25 hover:border-sky-400/50 bg-slate-900/20 hover:bg-slate-900/30"
                   }`}
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-purple-700/0 via-fuchsia-600/10 to-purple-700/0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <Icon size={16} className="text-fuchsia-300" />
-                  <span className="relative text-fuchsia-100">{name}</span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-cyan-700/0 via-sky-500/10 to-blue-700/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <Icon size={16} className="text-sky-300" />
+                  <span className="relative text-cyan-100">{name}</span>
                 </Link>
               ))}
             </div>
@@ -102,7 +102,7 @@ const Navigation = () => {
             <button
               id="mobile-menu-button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden relative p-2 rounded-lg border border-purple-600/30 bg-purple-900/30 backdrop-blur-lg text-fuchsia-200 hover:border-fuchsia-400/60 hover:bg-purple-800/40 transition-all"
+              className="md:hidden relative p-2 rounded-lg border border-cyan-600/30 bg-slate-900/40 backdrop-blur-lg text-cyan-200 hover:border-sky-400/60 hover:bg-slate-800/50 transition-all"
               aria-label="Toggle mobile menu"
             >
               {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -117,7 +117,7 @@ const Navigation = () => {
           isMenuOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="mx-4 mt-2 mb-4 rounded-2xl border border-purple-600/30 bg-[#141627]/90 backdrop-blur-xl shadow-[0_0_25px_-8px_rgba(168,85,247,0.35)] p-4 space-y-2">
+  <div className="mx-4 mt-2 mb-4 rounded-2xl border border-cyan-600/30 bg-[#0c1322]/90 backdrop-blur-xl shadow-[0_0_25px_-8px_rgba(56,189,248,0.35)] p-4 space-y-2">
           {sections.map(({ name, icon: Icon, path }) => (
             <Link
               key={name}
@@ -125,13 +125,13 @@ const Navigation = () => {
               onClick={closeMenu}
               className={`relative flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium tracking-wide transition-all border overflow-hidden ${
                 isActive(path)
-                  ? "border-fuchsia-400/60 bg-purple-900/40 shadow-[0_0_18px_-4px_rgba(217,70,239,0.4)]"
-                  : "border-purple-600/20 hover:border-fuchsia-400/60 bg-purple-900/10 hover:bg-purple-900/30"
+                  ? "border-sky-400/60 bg-slate-900/50 shadow-[0_0_18px_-4px_rgba(56,189,248,0.45)]"
+                  : "border-cyan-600/25 hover:border-sky-400/60 bg-slate-900/20 hover:bg-slate-900/40"
               }`}
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-purple-700/0 via-fuchsia-600/10 to-purple-700/0 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <Icon size={18} className="text-fuchsia-300" />
-              <span className="relative text-fuchsia-100">{name}</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-cyan-700/0 via-sky-500/10 to-blue-700/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <Icon size={18} className="text-sky-300" />
+              <span className="relative text-cyan-100">{name}</span>
             </Link>
           ))}
         </div>

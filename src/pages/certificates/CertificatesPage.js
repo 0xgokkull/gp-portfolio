@@ -58,12 +58,12 @@ function CertificatesPage() {
     >
       {/* Soft glows */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute top-10 left-0 w-72 h-72 rounded-full bg-gradient-to-tr from-purple-600/25 via-fuchsia-500/20 to-pink-500/15 blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-br from-indigo-600/20 via-purple-500/15 to-fuchsia-500/15 blur-3xl" />
+        <div className="absolute top-10 left-0 w-72 h-72 rounded-full bg-gradient-to-tr from-cyan-600/25 via-sky-500/20 to-blue-500/15 blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-br from-cyan-700/20 via-sky-600/15 to-blue-500/15 blur-3xl" />
       </div>
 
       <header className="max-w-3xl mx-auto text-center mb-14 space-y-4">
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-fuchsia-300 to-pink-300 drop-shadow-[0_0_10px_rgba(168,85,247,0.35)]">
+  <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-sky-300 via-cyan-200 to-blue-200 drop-shadow-[0_0_10px_rgba(56,189,248,0.45)]">
           Certificates
         </h1>
         <p className="text-sm md:text-base text-gray-300">

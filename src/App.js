@@ -12,7 +12,7 @@ import ParticlesComponent from "./components/Particle"; // Assuming this is the 
 const App = () => {
   return (
     <Router>
-      <div className="relative min-h-screen bg-black text-white flex flex-col">
+      <div className="relative min-h-screen bg-transparent text-white flex flex-col">
         {/* Particles background */}
         <ParticlesComponent id="particles" />
 
@@ -20,7 +20,7 @@ const App = () => {
         <Navigation />
 
         {/* Page Content */}
-        <div className="flex-grow pt-16 z-10 relative">
+  <div className="flex-grow pt-16 relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -31,7 +31,7 @@ const App = () => {
         </div>
 
         {/* Footer */}
-        <Footer />
+  <div className="relative z-30"><Footer /></div>
       </div>
     </Router>
   );
