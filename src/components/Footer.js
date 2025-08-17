@@ -24,13 +24,6 @@ const Footer = () => {
       bgHover: "hover:bg-blue-900",
       tooltip: "Twitter Profile",
     },
-    {
-      icon: Mail,
-      href: "mailto:gokkull04@gmail.com",
-      hoverColor: "hover:text-white",
-      bgHover: "hover:bg-red-900",
-      tooltip: "Send Email",
-    },
   ];
 
   return (
