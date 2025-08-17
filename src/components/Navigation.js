@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Star, Code, FileText, User, Home } from "lucide-react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,92 +54,85 @@ const Navigation = () => {
     setIsMenuOpen(false);
   };
 
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
+
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out backdrop-blur-xl border-b ${
         isScrolled
-          ? "bg-gray-800 backdrop-blur-sm shadow-2xl border-b border-purple-900/50"
-          : "bg-gray-800"
+          ? "bg-[#141627]/85 border-purple-800/40 shadow-[0_0_25px_-8px_rgba(168,85,247,0.35)]"
+          : "bg-transparent border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo with hover effect */}
-          <div className="flex-shrink-0 group">
-            <h1
-              className="text-xl sm:text-2xl font-bold text-purple-500 tracking-wider 
-              transition-all duration-300 group-hover:text-purple-400 
-              group-hover:tracking-widest"
-            >
-              GP's Portfolio
+          {/* Logo */}
+          <Link to="/" className="flex-shrink-0 group relative">
+            <span className="absolute -inset-1 rounded-lg opacity-0 group-hover:opacity-100 blur-lg bg-gradient-to-r from-purple-600/40 via-fuchsia-500/30 to-pink-500/20 transition" />
+            <h1 className="relative text-xl sm:text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-fuchsia-200 to-pink-300 drop-shadow-[0_0_6px_rgba(168,85,247,0.4)] group-hover:tracking-wider transition-all">
+              GP
             </h1>
-          </div>
+          </Link>
 
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden">
-            <button
-              id="mobile-menu-button"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-purple-400 hover:text-purple-600 focus:outline-none 
-                transform transition-transform hover:rotate-180 p-2"
-              aria-label="Toggle mobile menu"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex">
-            <div className="ml-10 flex items-center space-x-6">
+          {/* Desktop Nav */}
+          <div className="hidden md:flex ml-6">
+            <div className="flex items-center gap-2">
               {sections.map(({ name, icon: Icon, path }) => (
                 <Link
                   key={name}
-                  to={path} // Use Link to navigate between pages
-                  className={`group flex items-center px-3 py-2 rounded-md 
-                    text-sm font-medium transition-all duration-300 
-                    hover:border-b-2 hover:border-purple-500`}
+                  to={path}
+                  className={`relative inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium tracking-wide transition-all group overflow-hidden border ${
+                    isActive(path)
+                      ? "border-fuchsia-400/60 bg-purple-900/30 shadow-[0_0_18px_-4px_rgba(217,70,239,0.4)]"
+                      : "border-purple-600/20 hover:border-fuchsia-400/50 bg-purple-900/10 hover:bg-purple-900/20"
+                  }`}
                 >
-                  <Icon
-                    size={16}
-                    className={`mr-2 transition-colors duration-300 
-                      text-gray-400 group-hover:text-white`}
-                  />
-                  {name}
+                  <span className="absolute inset-0 bg-gradient-to-r from-purple-700/0 via-fuchsia-600/10 to-purple-700/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <Icon size={16} className="text-fuchsia-300" />
+                  <span className="relative text-fuchsia-100">{name}</span>
                 </Link>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Mobile Menu Dropdown */}
-        <div
-          id="mobile-menu"
-          className={`md:hidden fixed left-0 right-0 top-16 transition-all duration-300 ease-in-out transform 
-            ${
-              isMenuOpen
-                ? "translate-y-0 opacity-100 visible"
-                : "-translate-y-full opacity-0 invisible"
-            } bg-gray-800 backdrop-blur-sm`}
-        >
-          <div className="px-6 pt-4 pb-3 space-y-2">
-            {sections.map(({ name, icon: Icon, path }) => (
-              <Link
-                key={name}
-                to={path} // Use Link to navigate between pages
-                className={`w-full flex items-center text-left px-4 py-3 rounded-md 
-                  text-base font-medium transition-all duration-300 
-                  hover:border-b-2 hover:border-purple-500`}
-                onClick={closeMenu} // Close menu when a link is clicked
-              >
-                <Icon
-                  size={18}
-                  className={`mr-3 transition-colors 
-                    text-gray-400 group-hover:text-white`}
-                />
-                {name}
-              </Link>
-            ))}
-          </div>
+          {/* Mobile Toggle */}
+            <button
+              id="mobile-menu-button"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden relative p-2 rounded-lg border border-purple-600/30 bg-purple-900/30 backdrop-blur-lg text-fuchsia-200 hover:border-fuchsia-400/60 hover:bg-purple-800/40 transition-all"
+              aria-label="Toggle mobile menu"
+            >
+              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+        </div>
+      </div>
+
+      {/* Mobile Panel */}
+      <div
+        id="mobile-menu"
+        className={`md:hidden transition-all duration-400 ease-out origin-top overflow-hidden ${
+          isMenuOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="mx-4 mt-2 mb-4 rounded-2xl border border-purple-600/30 bg-[#141627]/90 backdrop-blur-xl shadow-[0_0_25px_-8px_rgba(168,85,247,0.35)] p-4 space-y-2">
+          {sections.map(({ name, icon: Icon, path }) => (
+            <Link
+              key={name}
+              to={path}
+              onClick={closeMenu}
+              className={`relative flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium tracking-wide transition-all border overflow-hidden ${
+                isActive(path)
+                  ? "border-fuchsia-400/60 bg-purple-900/40 shadow-[0_0_18px_-4px_rgba(217,70,239,0.4)]"
+                  : "border-purple-600/20 hover:border-fuchsia-400/60 bg-purple-900/10 hover:bg-purple-900/30"
+              }`}
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-purple-700/0 via-fuchsia-600/10 to-purple-700/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <Icon size={18} className="text-fuchsia-300" />
+              <span className="relative text-fuchsia-100">{name}</span>
+            </Link>
+          ))}
         </div>
       </div>
     </nav>
