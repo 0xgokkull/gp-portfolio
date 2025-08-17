@@ -27,10 +27,10 @@ const ParticlesComponent = (props) => {
       fpsLimit: 60,
       particles: {
         number: {
-          value: 50,
+          value: 220, // further increased quantity
           density: {
             enable: true,
-            value_area: 800,
+            value_area: 1000, // expand area a bit to avoid overcrowding
           },
         },
         color: {
@@ -50,18 +50,18 @@ const ParticlesComponent = (props) => {
           },
         },
         size: {
-          value: 3,
+          value: 2, // keep small for performance with higher count
           random: true,
           anim: {
             enable: true,
-            speed: 4,
+            speed: 3,
             size_min: 0.3,
             sync: false,
           },
         },
         move: {
           enable: true,
-          speed: 1, // Slow movement speed
+          speed: 0.8, // slightly slower to keep calm despite higher count
           direction: "none",
           random: true,
           straight: false,
