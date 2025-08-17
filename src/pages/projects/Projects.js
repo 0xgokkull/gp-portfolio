@@ -13,14 +13,56 @@ import landingpage from "../../assets/landingpage.png";
 import web3 from "../../assets/web3.png";
 import qr from "../../assets/qr.png";
 import chained from "../../assets/chained.png";
-import smartwill from "../../assets/smartwill.jpeg"
+import smartwill from "../../assets/smartwill.jpeg";
+import eduxlite from "../../assets/eduxlite.jpeg";
+import arcadeblock from "../../assets/arcadeblock.jpeg";
+import tnkun from "../../assets/tnkun.jpeg";
+import ipfs from "../../assets/pinata-ipfs.jpeg";
+import firm from "../../assets/firm.png";
+import ava from "../../assets/ava.png";
 
 function Projects() {
   const projects = [
     {
+      name: ".Ava",
+      description: "A programming language built for avalanche chain",
+      link: "https://dotava.vercel.app/",
+      image: ava,
+    },
+    {
+      name: "FirM (Winner)",
+      description: "A decentralized Fir management system with AI agent support",
+      link: "https://devfolio.co/projects/aipowered-emergency-response-and-fir-management-3f74",
+      image: firm,
+    },
+    {
+      name: "IPFS npm package",
+      description: "Published npm package for ipfs hash conversion using pinata",
+      link: "https://www.npmjs.com/package/ipfs-pinata-toolkit",
+      image: ipfs,
+    },
+    {
+      name: "TNKun (Winner)",
+      description: "A decentralized blockchain Auth with AI agent Support.",
+      link: "https://github.com/gokkull-15/advaya.git",
+      image: tnkun,
+    },
+    {
+      name: "Arcadeblock (Top 25)",
+      description: "A defi learning platform with AI agent Support.",
+      link: "https://github.com/gokkull-15/hack-hazards.git",
+      image: arcadeblock,
+    },
+    {
+      name: "EduXlite (Top 75)",
+      description: "A defi learning platform with AI agent Support.",
+      link: "https://github.com/EmmanuellDev/eduXlite.git",
+      image: eduxlite,
+    },
+    {
       name: "SmartWill",
       description: "A decentralized land registration platform with AI agent Support.",
-      link: "https://github.com/gokkull-15/ChainEdu.git",
+      link: "https://devfolio.co/projects/smartwill-d041",
       image: smartwill,
     },
     {
@@ -36,7 +78,7 @@ function Projects() {
       image: blockinsure,
     },
     {
-      name: "DevMa",
+      name: "DevMa (Winner)",
       description: "A decentalized platform that combines Devfolio and Luma.",
       link: "https://github.com/gokkull-15/devma-v1.git",
       image: devma,
@@ -56,14 +98,14 @@ function Projects() {
       image: shopx,
     },
     {
-      name: "TRSA",
+      name: "TRSA (Client)",
       description:
         "A social platform to organise events and view the skaters around the region.",
       link: "https://github.com/Sunil0881/TRSA.git",
       image: trsa,
     },
     {
-      name: "Mahalakshmi build",
+      name: "Mahalakshmi (Client)",
       description: "A real-estate side build for my client.",
       link: "https://github.com/gokkull-15/mahalakshmi-app.git",
       image: mahalakshmi,
@@ -87,7 +129,7 @@ function Projects() {
       image: web3,
     },
     {
-      name: "Landing Page",
+      name: "Landing Page (Client)",
       description: "A landing page for musical band for my client.",
       link: "https://github.com/gokkull-15/Landipage.git",
       image: landingpage,
@@ -99,7 +141,7 @@ function Projects() {
       image: qr,
     },
     {
-      name: "Billing System",
+      name: "Billing System (Client)",
       description: "A fully functioning billing system for my client.",
       link: "https://github.com/gokkull-15/billing-system-app.git",
       image: billing,
