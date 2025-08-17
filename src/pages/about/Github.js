@@ -31,7 +31,7 @@ function Github() {
             transition={{ duration: 0.5, delay: 0.25 }}
           />
         </a>
-        <div className="absolute bottom-2 right-4 text-[10px] uppercase tracking-widest text-fuchsia-300/50">activity</div>
+        <div className="absolute bottom-2 right-4 text-[10px] uppercase tracking-widest text-fuchsia-300/50">GP</div>
       </motion.div>
     </motion.div>
   );

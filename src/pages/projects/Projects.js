@@ -1,5 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
+import { motion } from "framer-motion";
 import blockinsure from "../../assets/blockinsure.png";
 import medico from "../../assets/medico.png";
 import devma from "../../assets/devma.png";
@@ -149,24 +150,34 @@ function Projects() {
   ];
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4">
-      <div className="w-full px-4 max-w-7xl">
-        <h2 className="mb-12 text-4xl font-bold text-center text-purple-500">
-          Projects
-        </h2>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              name={project.name}
-              description={project.description}
-              link={project.link}
-              image={project.image}
-            />
-          ))}
-        </div>
+    <motion.main
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative px-6 md:px-12 xl:px-24 py-20 text-white overflow-hidden"
+    >
+      {/* Soft background accents */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute top-10 left-0 w-72 h-72 rounded-full bg-gradient-to-tr from-purple-600/20 via-fuchsia-500/15 to-pink-500/10 blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-br from-indigo-600/15 via-purple-500/15 to-fuchsia-500/10 blur-3xl" />
       </div>
-    </div>
+
+      <header className="max-w-3xl mx-auto text-center mb-14 space-y-4">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-fuchsia-300 to-pink-300 drop-shadow-[0_0_10px_rgba(168,85,247,0.35)]">
+          Projects
+        </h1>
+        <p className="text-sm md:text-base text-gray-300">
+          A curated selection of builds ranging from decentralized protocols & AI‑assisted platforms to client deliverables and experimental utilities.
+        </p>
+      </header>
+
+      {/* Projects Grid */}
+      <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+        {projects.map((project, index) => (
+          <ProjectCard key={project.name + index} {...project} index={index} />
+        ))}
+      </div>
+    </motion.main>
   );
 }
 
