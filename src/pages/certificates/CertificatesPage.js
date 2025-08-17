@@ -1,5 +1,6 @@
 import React from "react";
 import CertificateCard from "./CertificateCard";
+import { motion } from "framer-motion";
 import codsoft from "../../assets/codsoft.jpeg";
 import aws from "../../assets/aws.jpeg";
 import js from "../../assets/js.jpeg";
@@ -49,23 +50,33 @@ function CertificatesPage() {
   ];
 
   return (
-    <div className="min-h-screen flex justify-center items-center p-4">
-      <div className="max-w-7xl w-full px-4">
-      <h1 className="text-4xl font-bold text-purple-300 text-center mb-8">
-        My Certificates
-      </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {certificates.map((certificate, index) => (
-          <CertificateCard
-            key={index}
-            name={certificate.name}
-            description={certificate.description}
-            image={certificate.image}
-          />
-        ))}
-        </div>
+    <motion.main
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative min-h-screen px-6 md:px-12 xl:px-24 py-20 text-white overflow-hidden"
+    >
+      {/* Soft glows */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute top-10 left-0 w-72 h-72 rounded-full bg-gradient-to-tr from-purple-600/25 via-fuchsia-500/20 to-pink-500/15 blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-br from-indigo-600/20 via-purple-500/15 to-fuchsia-500/15 blur-3xl" />
       </div>
-    </div>
+
+      <header className="max-w-3xl mx-auto text-center mb-14 space-y-4">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-fuchsia-300 to-pink-300 drop-shadow-[0_0_10px_rgba(168,85,247,0.35)]">
+          Certificates
+        </h1>
+        <p className="text-sm md:text-base text-gray-300">
+          Recognitions & credentials earned along the journey—internships, courses, performance awards, and specialization tracks.
+        </p>
+      </header>
+
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {certificates.map((certificate, index) => (
+          <CertificateCard key={certificate.name + index} index={index} {...certificate} />
+        ))}
+      </div>
+    </motion.main>
   );
 }
 
