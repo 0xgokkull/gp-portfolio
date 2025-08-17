@@ -14,10 +14,11 @@ import { TbBrandTypescript } from "react-icons/tb";
 function Techstack() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="flex justify-center flex-wrap gap-4 py-12"
+      className="flex justify-center flex-wrap gap-5 py-12"
     >
       {[
         <DiReact />,
@@ -33,16 +34,13 @@ function Techstack() {
       ].map((icon, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.5,
-            delay: index * 0.1,
-            ease: "easeOut",
-          }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="lg:text-9xl text-7xl m-4 sm:m-2 p-3 opacity-90 border border-purple-400 rounded-md shadow-lg transition-transform duration-300 hover:border-purple-500"
+          initial={{ opacity: 0, scale: 0.85 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45, delay: index * 0.07, ease: "easeOut" }}
+          whileHover={{ scale: 1.12, rotate: 2 }}
+          whileTap={{ scale: 0.94 }}
+          className="lg:text-8xl text-6xl m-2 p-4 rounded-2xl border border-purple-600/30 bg-purple-900/20 backdrop-blur-md shadow-[0_0_18px_-6px_rgba(168,85,247,0.4)] text-fuchsia-200/90 hover:border-fuchsia-400/60 hover:shadow-[0_0_25px_-4px_rgba(217,70,239,0.5)] transition-all"
         >
           {icon}
         </motion.div>

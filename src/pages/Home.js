@@ -93,7 +93,7 @@ const Home = () => {
         </div>
 
         {/* Left content */}
-        <div className="w-full lg:w-1/2 flex flex-col gap-6">
+  <div className="w-full lg:w-1/2 flex flex-col gap-6 order-1 lg:order-1">
           <div>
             <div className="inline-block relative">
               <span className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-fuchsia-500 to-pink-500 rounded-lg blur opacity-60 animate-gradientShift" />
@@ -168,7 +168,7 @@ const Home = () => {
         </div>
 
         {/* Right visual */}
-        <div className="w-full lg:w-1/2 flex justify-center items-center relative">
+  <div className="w-full lg:w-1/2 flex justify-center items-center relative order-2 lg:order-2">
           <div className="relative w-full max-w-lg">
             {/* Dimmed reactive glow (reduced opacity & blur) */}
             <div className="absolute -inset-4 bg-gradient-to-tr from-purple-600/20 via-fuchsia-500/15 to-pink-500/10 rounded-3xl blur-xl animate-gradientShift" />
