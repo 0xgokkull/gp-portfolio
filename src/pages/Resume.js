@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Download, ExternalLink } from "lucide-react";
 import resumePDF from "../assets/gp-resume-june.pdf"; // PDF file
+import LottieFrame from "../components/LottieFrame";
 
 const Resume = () => {
   return (
@@ -11,11 +12,7 @@ const Resume = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="relative min-h-screen flex items-center justify-center px-4 py-16 text-white overflow-hidden"
     >
-      {/* Background glows */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute top-10 left-0 w-72 h-72 rounded-full bg-gradient-to-tr from-cyan-600/20 via-sky-500/15 to-blue-500/10 blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-br from-cyan-700/20 via-sky-600/15 to-blue-500/15 blur-3xl" />
-      </div>
+  {/* Background glows removed for simplified aesthetic */}
 
       {/* Center Card */}
       <div className="w-full max-w-5xl relative rounded-3xl border border-cyan-600/30 bg-gradient-to-br from-slate-900/50 via-slate-800/30 to-cyan-900/15 backdrop-blur-xl shadow-[0_0_45px_-15px_rgba(56,189,248,0.4)] p-6 md:p-10">
@@ -35,14 +32,7 @@ const Resume = () => {
 
         {/* Mobile animation + buttons (no animation shown on desktop) */}
         <div className="relative mb-6 md:hidden">
-          <div className="relative rounded-2xl overflow-hidden border border-cyan-600/30 bg-slate-900/30 backdrop-blur-md p-3">
-            <iframe
-              src="https://lottie.host/embed/2a070129-db6c-4cc5-8f98-3e8a733ea0b7/6Z1wdFnuEb.lottie"
-              className="w-full h-48 rounded-xl opacity-90"
-              title="resume animation"
-            />
-            <div className="absolute bottom-2 right-3 text-[10px] uppercase tracking-widest text-cyan-300/50">focus</div>
-          </div>
+          <LottieFrame size="medium" label="focus" src="https://lottie.host/embed/2a070129-db6c-4cc5-8f98-3e8a733ea0b7/6Z1wdFnuEb.lottie" />
         </div>
 
   {/* PDF viewer - hidden on mobile */}

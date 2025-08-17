@@ -13,6 +13,7 @@ import {
   Cpu,
   Building,
 } from "lucide-react";
+import LottieFrame from "../components/LottieFrame";
 
 const Home = () => {
   const [isNameHovered, setIsNameHovered] = useState(false);
@@ -73,8 +74,9 @@ const Home = () => {
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="text-white overflow-x-hidden"
+      className="text-white overflow-x-hidden relative"
     >
+  {/* Background overlays removed for cleaner subtle particle-driven backdrop */}
       {/* Hero Section */}
   {/* On mobile we want content first and animation below -> remove flex-col-reverse */}
   <section className="relative min-h-[92vh] flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 px-6 md:px-12 xl:px-24 pt-10 md:pt-0">
@@ -83,6 +85,8 @@ const Home = () => {
           {/* Softened decorative glows (reduced opacity) */}
           <div className="absolute top-1/4 -left-10 w-72 h-72 bg-gradient-to-tr from-cyan-600/25 via-sky-500/25 to-blue-400/20 blur-3xl rounded-full animate-floatSlow" />
           <div className="absolute bottom-10 -right-16 w-80 h-80 bg-gradient-to-br from-sky-600/25 via-cyan-500/20 to-blue-400/20 blur-3xl rounded-full animate-floatSlow [animation-delay:3s]" />
+          {/* Shimmer sweep */}
+          <div className="absolute inset-0 opacity-20 bg-[linear-gradient(110deg,transparent,rgba(56,189,248,0.12),transparent)] bg-[length:200%_100%] animate-shimmer" />
         </div>
 
         {/* Left content */}
@@ -160,19 +164,10 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Right visual */}
-  <div className="w-full lg:w-1/2 flex justify-center items-center relative order-2 lg:order-2">
-          <div className="relative w-full max-w-lg">
-            {/* Dimmed reactive glow (reduced opacity & blur) */}
-            <div className="absolute -inset-4 bg-gradient-to-tr from-cyan-600/20 via-sky-500/15 to-blue-400/15 rounded-3xl blur-xl animate-gradientShift" />
-            <div className="relative rounded-3xl backdrop-blur-xl border border-cyan-700/30 bg-slate-900/30 p-3 md:p-6 overflow-hidden shadow-[0_0_25px_-8px_rgba(14,165,233,0.35)]">
-              <iframe
-                src="https://lottie.host/embed/6eed80dc-7a32-4e1e-8ee7-7b9e3678feca/El25YvPRNL.lottie"
-                className="w-full h-[240px] sm:h-[300px] md:h-[340px] lg:h-[380px] opacity-90 hover:opacity-100 transition-opacity"
-                title="developer animation"
-              />
-              <div className="absolute top-2 right-2 text-[10px] uppercase tracking-widest text-sky-300/60">GP</div>
-            </div>
+        {/* Right visual using shared LottieFrame */}
+        <div className="w-full lg:w-1/2 flex justify-center items-center relative order-2 lg:order-2">
+          <div className="w-full max-w-lg">
+            <LottieFrame size="hero" orbit label="GP" src="https://lottie.host/embed/6eed80dc-7a32-4e1e-8ee7-7b9e3678feca/El25YvPRNL.lottie" />
           </div>
         </div>
       </section>
@@ -187,6 +182,7 @@ const Home = () => {
       >
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute top-1/3 right-0 w-64 h-64 bg-gradient-to-br from-cyan-600/25 via-sky-500/20 to-blue-500/20 blur-3xl rounded-full animate-floatSlow" />
+          <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-gradient-to-tr from-sky-500/20 via-cyan-400/15 to-blue-500/10 blur-3xl rounded-full animate-floatSlow [animation-delay:4s]" />
         </div>
 
         {/* Textual */}
@@ -242,18 +238,10 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Animation / Visual */}
+        {/* Animation / Visual using shared frame */}
         <div className="w-full lg:w-1/2 flex justify-center items-center">
-          <div className="relative w-full max-w-xl">
-            <div className="absolute -inset-4 bg-gradient-to-br from-cyan-600/25 via-sky-500/25 to-blue-500/20 rounded-3xl blur-2xl animate-gradientShift" />
-            <div className="relative rounded-3xl backdrop-blur-xl border border-cyan-700/40 bg-slate-900/20 p-3 md:p-6 overflow-hidden shadow-[0_0_35px_-5px_rgba(56,189,248,0.35)]">
-              <iframe
-                src="https://lottie.host/embed/8a5d3bd7-3997-4d40-9c65-53b8a075e0cd/K3BROBW30C.lottie"
-                className="w-full h-[260px] sm:h-[340px] md:h-[480px] lg:h-[560px] opacity-90 hover:opacity-100 transition-opacity"
-                title="intro animation"
-              />
-              <div className="absolute bottom-3 left-4 text-[10px] uppercase tracking-widest text-sky-300/60">GP</div>
-            </div>
+          <div className="w-full max-w-xl">
+            <LottieFrame size="hero" orbit label="GP" src="https://lottie.host/embed/8a5d3bd7-3997-4d40-9c65-53b8a075e0cd/K3BROBW30C.lottie" />
           </div>
         </div>
       </section>
