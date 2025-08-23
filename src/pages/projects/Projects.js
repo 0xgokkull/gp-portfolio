@@ -21,9 +21,16 @@ import tnkun from "../../assets/tnkun.jpeg";
 import ipfs from "../../assets/pinata-ipfs.jpeg";
 import firm from "../../assets/firm.png";
 import ava from "../../assets/ava.png";
+import ghostpic from "../../assets/ghostpic.png";
 
 function Projects() {
   const projects = [
+    {
+      name: "GhostPic",
+      description: "A decentralized civic platform for anonymous communication",
+      link: "https://metis-ghostpic.vercel.app/",
+      image: ghostpic,
+    },
     {
       name: ".Ava",
       description: "A programming language built for avalanche chain",
