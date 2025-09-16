@@ -20,10 +20,10 @@ function Github() {
   className="relative group p-4 rounded-3xl border border-cyan-600/30 bg-slate-900/30 backdrop-blur-xl shadow-[0_0_30px_-10px_rgba(56,189,248,0.35)] hover:border-sky-400/60 transition-all"
       >
   <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-cyan-600/25 via-sky-500/20 to-blue-500/15 opacity-0 group-hover:opacity-100 blur-xl transition-opacity" />
-        <a href="https://github.com/gokkull-15" target="_blank" rel="noopener noreferrer" className="relative block">
+        <a href="https://github.com/0xgokkull" target="_blank" rel="noopener noreferrer" className="relative block">
           <motion.img
-            src="https://github-readme-stats.vercel.app/api?username=gokkull-15&show_icons=true&theme=react&count_private=true&include_all_commits=true"
-            alt="gokkull-15 stats"
+            src="https://github-readme-stats.vercel.app/api?username=0xgokkull&show_icons=true&theme=react&count_private=true&include_all_commits=true"
+            alt="0xgokkull stats"
             className="mx-auto lg:h-80"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

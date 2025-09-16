@@ -46,7 +46,7 @@ const Home = () => {
     () => [
       {
         icon: Github,
-        href: "https://github.com/gokkull-15",
+        href: "https://github.com/0xgokkull",
         hoverColor: "hover:text-white",
         bgHover: "hover:bg-gray-800",
         tooltip: "GitHub Profile",
@@ -60,7 +60,7 @@ const Home = () => {
       },
       {
         icon: Twitter,
-        href: "https://x.com/Gokkull15",
+        href: "https://x.com/0xgokkull",
         hoverColor: "hover:text-white",
         bgHover: "hover:bg-blue-900",
         tooltip: "Twitter Profile",
