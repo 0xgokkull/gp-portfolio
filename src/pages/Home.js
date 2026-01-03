@@ -359,6 +359,52 @@ const Home = () => {
         <AllProjectsModal projects={projects} onClose={() => setSelectedProject(null)} />
       )}
 
+      {/* Resume Section - Compact */}
+      <section id="resume" className="relative px-6 md:px-12 xl:px-24 py-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="rounded-2xl border border-cyan-600/30 bg-gradient-to-br from-slate-900/50 via-slate-800/30 to-cyan-900/15 backdrop-blur-xl shadow-[0_0_40px_-15px_rgba(56,189,248,0.45)] p-6 md:p-8">
+            <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-300 via-cyan-200 to-blue-200 mb-4 text-center">
+              Resume
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
+              <a
+                href={resumePDF}
+                download
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-lg font-medium text-sm bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-500 text-white shadow-lg transition-all"
+              >
+                <Download size={16} />
+                Download
+              </a>
+              <a
+                href={resumePDF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-lg font-medium text-sm border border-cyan-500/40 hover:border-sky-400/70 bg-slate-900/30 hover:bg-slate-800/40 text-cyan-100 transition-all"
+              >
+                <ExternalLink size={16} />
+                Open PDF
+              </a>
+            </div>
+
+            <div className="hidden md:block h-[70vh] rounded-xl border border-cyan-600/30 bg-slate-900/30 overflow-hidden">
+              <object data={resumePDF} type="application/pdf" className="w-full h-full">
+                <div className="flex flex-col items-center justify-center h-full p-8 text-center text-gray-300">
+                  <p className="mb-4">PDF preview not supported in this browser.</p>
+                  <a
+                    href={resumePDF}
+                    download
+                    className="inline-flex items-center gap-2 px-5 py-2 rounded-lg font-medium text-sm bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-500 text-white"
+                  >
+                    <Download size={16} />
+                    Download Resume
+                  </a>
+                </div>
+              </object>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 };
