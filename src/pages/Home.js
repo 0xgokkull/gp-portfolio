@@ -38,7 +38,7 @@ const MemoizedGithubStats = memo(GithubStats);
 
 const Home = () => {
   const [selectedProject, setSelectedProject] = useState(null);
-  const scrollContainerRef = useRef(null); // Added ref for next step
+  const scrollContainerRef = useRef(null);
 
   // Refs for direct DOM manipulation
   const titleRef = useRef(null);
@@ -198,6 +198,7 @@ const Home = () => {
     },
   ], []);
 
+  // ... (handleMouseMove) ...
   const handleMouseMove = (e) => {
     if (window.requestAnimationFrame) {
       window.requestAnimationFrame(() => {
@@ -220,7 +221,6 @@ const Home = () => {
 
   return (
     <main className="text-white overflow-x-hidden relative" onMouseMove={handleMouseMove}>
-      {/* ... (Previous Sections: Background, Hero, About) ... */}
       {/* GLOBAL BACKGROUND */}
       <div className="fixed inset-0 -z-50 bg-[#020617] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 via-[#020617] to-[#020617]" />
@@ -325,9 +325,74 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Projects Section - Auto-scroll */}
+      <section id="projects" className="relative px-6 md:px-12 xl:px-24 py-16">
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute top-10 right-0 w-72 h-72 rounded-full bg-gradient-to-tr from-cyan-600/15 via-sky-500/10 to-blue-500/10 blur-3xl" />
+        </div>
+
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-300 via-cyan-200 to-blue-200 mb-4">
+            Projects
+          </h2>
+          <p className="text-sm md:text-base text-gray-300 mb-8">
+            Decentralized protocols & AI‑assisted platforms
+          </p>
+
+          <ProjectsCarousel projects={projects} scrollContainerRef={scrollContainerRef} />
+
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={() => setSelectedProject(true)}
+              className="px-6 py-2.5 rounded-lg font-semibold text-sm bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-500 text-white shadow-lg transition-all"
+            >
+              View All Projects
+            </button>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 };
+
+// Projects Auto-scroll Carousel Component - Memoized
+const ProjectsCarousel = memo(({ projects, scrollContainerRef }) => {
+  const [isPaused, setIsPaused] = React.useState(false);
+
+  React.useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container || isPaused) return;
+
+    let scrollInterval;
+    const scroll = () => {
+      if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+        container.scrollLeft = 0;
+      } else {
+        container.scrollLeft += 1;
+      }
+    };
+
+    scrollInterval = setInterval(scroll, 30);
+
+    return () => clearInterval(scrollInterval);
+  }, [isPaused, scrollContainerRef]);
+
+  return (
+    <div
+      ref={scrollContainerRef}
+      className="flex gap-6 overflow-x-auto pb-6 scrollbar-custom"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      style={{ scrollBehavior: 'auto' }}
+    >
+      {[...projects, ...projects].map((project, index) => (
+        <ProjectCard key={`project-${index}`} {...project} />
+      ))}
+    </div>
+  );
+});
 
 // Simplified Project Card Component - Memoized
 const ProjectCard = memo(({ name, description, image }) => {
