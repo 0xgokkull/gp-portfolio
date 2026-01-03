@@ -31,6 +31,7 @@ import firm from "../assets/firm.png";
 import ava from "../assets/ava.png";
 import ghostpic from "../assets/ghostpic.png";
 
+// Memoize imported components to prevent re-renders relative to Home
 const MemoizedAboutCard = memo(Aboutcard);
 const MemoizedTechstack = memo(Techstack);
 const MemoizedToolstack = memo(Toolstack);
@@ -40,7 +41,7 @@ const Home = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const scrollContainerRef = useRef(null);
 
-  // Refs for direct DOM manipulation
+  // Refs for direct DOM manipulation (Performance Optimization)
   const titleRef = useRef(null);
   const glowRef = useRef(null);
   const descriptionRef = useRef(null);
@@ -198,8 +199,9 @@ const Home = () => {
     },
   ], []);
 
-  // ... (handleMouseMove) ...
+  // Optimized Mouse Move Handler using requestAnimationFrame via simplified direct DOM access
   const handleMouseMove = (e) => {
+    // We update the styles directly on the DOM elements to avoid React re-renders
     if (window.requestAnimationFrame) {
       window.requestAnimationFrame(() => {
         const { clientX, clientY } = e;
@@ -221,11 +223,13 @@ const Home = () => {
 
   return (
     <main className="text-white overflow-x-hidden relative" onMouseMove={handleMouseMove}>
-      {/* ... (Previous Sections: Background, Hero, About) ... */}
-      {/* GLOBAL BACKGROUND */}
+
+      {/* GLOBAL BACKGROUND - Realistic Shooting Stars */}
       <div className="fixed inset-0 -z-50 bg-[#020617] overflow-hidden">
+        {/* Static Stars */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 via-[#020617] to-[#020617]" />
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
+
         {/* Shooting Stars Container */}
         <div className="absolute inset-0 rotate-[20deg] opacity-60">
           {useMemo(() => [...Array(20)].map((_, i) => ({
@@ -247,78 +251,133 @@ const Home = () => {
             />
           ))}
         </div>
+
+        {/* Deep Space Glows */}
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/10 blur-[120px] rounded-full mix-blend-screen" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 blur-[120px] rounded-full mix-blend-screen" />
       </div>
 
-      {/* Hero Section */}
+      {/* Hero Section - Centered & Reactive */}
       <section id="home" className="relative min-h-[90vh] flex items-center justify-center px-6 md:px-12 xl:px-24 py-16 overflow-hidden">
+
         <div className="w-full max-w-5xl mx-auto flex flex-col items-center justify-center text-center z-10">
+
+          {/* Mind-Blowing Text Animation Container */}
           <div className="relative mb-8 perspective-text group">
-            <h1 ref={titleRef} className="relative text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-gray-400 select-none transition-transform duration-75 ease-out hover:scale-[1.02]" style={{ textShadow: '0 0 30px rgba(255,255,255,0.1)' }}>
+            <h1
+              ref={titleRef}
+              className="relative text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-gray-400 select-none transition-transform duration-75 ease-out hover:scale-[1.02]"
+              style={{
+                textShadow: '0 0 30px rgba(255,255,255,0.1)',
+                // Transform handled by direct DOM manipulation
+              }}
+            >
               GOKUL PRIYAN
             </h1>
-            <div ref={glowRef} className="absolute -inset-10 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-blue-500/0 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+            {/* Cinematic Glow Underlay */}
+            <div
+              ref={glowRef}
+              className="absolute -inset-10 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-blue-500/0 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+              style={{
+                // Transform handled by direct DOM manipulation
+              }}
+            />
           </div>
 
-          <p ref={descriptionRef} className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed mb-10 tracking-wide transition-transform duration-75 ease-out">
+          <p
+            ref={descriptionRef}
+            className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed mb-10 tracking-wide transition-transform duration-75 ease-out"
+            style={{
+              // Transform handled by direct DOM manipulation
+            }}
+          >
             Constructing <span className="text-cyan-200 font-medium glow-text">decentralized realities</span> &
             <span className="text-sky-200 font-medium glow-text"> intelligent interfaces</span>.
           </p>
 
+          {/* Compact Roles - Centered */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {[
               { icon: Code, label: "Blockchain Engineer" },
               { icon: Cpu, label: "Full Stack Architect" },
               { icon: Building, label: "System Designer" },
             ].map(({ icon: Icon, label }) => (
-              <span key={label} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-900/40 border border-cyan-500/20 backdrop-blur-md text-sm md:text-base hover:border-cyan-400/50 hover:bg-slate-800/60 transition-all cursor-default group">
+              <span
+                key={label}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-900/40 border border-cyan-500/20 backdrop-blur-md text-sm md:text-base hover:border-cyan-400/50 hover:bg-slate-800/60 transition-all cursor-default group"
+              >
                 <Icon size={16} className="text-sky-400 group-hover:text-cyan-300 transition-colors" />
                 <span className="font-medium text-cyan-100/80 group-hover:text-cyan-100 transition-colors">{label}</span>
               </span>
             ))}
           </div>
 
+          {/* Interactions */}
           <div className="flex flex-col sm:flex-row items-center gap-5">
+            {/* Social Links */}
             <div className="flex items-center gap-4 px-6 py-3 rounded-2xl bg-slate-900/30 border border-cyan-500/10 backdrop-blur-sm">
               {socialLinks.map(({ icon: Icon, href, tooltip }) => (
-                <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={tooltip} className="p-2 rounded-lg hover:bg-white/5 text-gray-400 hover:text-cyan-300 transition-all hover:scale-110">
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={tooltip}
+                  className="p-2 rounded-lg hover:bg-white/5 text-gray-400 hover:text-cyan-300 transition-all hover:scale-110"
+                >
                   <Icon size={24} />
                 </a>
               ))}
             </div>
+
             <div className="h-8 w-px bg-cyan-800/30 hidden sm:block" />
+
+            {/* CTA */}
             <div className="flex gap-4">
-              <a href="#projects" className="group relative px-8 py-3 rounded-xl font-bold text-sm overflow-hidden bg-cyan-500 text-white shadow-[0_0_20px_-5px_rgba(6,182,212,0.5)] transition-all hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.7)] hover:scale-105">
+              <a
+                href="#projects"
+                className="group relative px-8 py-3 rounded-xl font-bold text-sm overflow-hidden bg-cyan-500 text-white shadow-[0_0_20px_-5px_rgba(6,182,212,0.5)] transition-all hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.7)] hover:scale-105"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500" />
-                <span className="relative flex items-center gap-2">Explore Work <Award size={16} /></span>
+                <span className="relative flex items-center gap-2">
+                  Explore Work <Award size={16} />
+                </span>
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section - Compact */}
       <section id="about" className="relative px-6 md:px-12 xl:px-24 py-16">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute top-10 left-0 w-72 h-72 rounded-full bg-gradient-to-tr from-cyan-600/15 via-sky-500/10 to-blue-500/10 blur-3xl" />
         </div>
+
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-300 via-cyan-200 to-blue-200 mb-8">
             About Me
           </h2>
+
           <div className="space-y-8">
             <MemoizedAboutCard />
+
+            {/* Tech Stack and Tools Side by Side in Boxes */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Tech Stack Box */}
               <div className="rounded-2xl border border-cyan-600/30 bg-gradient-to-br from-slate-900/40 via-slate-800/25 to-cyan-900/15 backdrop-blur-xl p-6">
                 <h3 className="text-xl md:text-2xl font-semibold text-cyan-200 mb-4 text-center">Tech Stack</h3>
                 <MemoizedTechstack />
               </div>
+
+              {/* Tools Box */}
               <div className="rounded-2xl border border-cyan-600/30 bg-gradient-to-br from-slate-900/40 via-slate-800/25 to-cyan-900/15 backdrop-blur-xl p-6">
                 <h3 className="text-xl md:text-2xl font-semibold text-cyan-200 mb-4 text-center">Tools</h3>
                 <MemoizedToolstack />
               </div>
             </div>
+
             <div>
               <h3 className="text-xl md:text-2xl font-semibold text-cyan-200 mb-4">GitHub Stats</h3>
               <MemoizedGithubStats />
@@ -341,8 +400,10 @@ const Home = () => {
             Decentralized protocols & AI‑assisted platforms
           </p>
 
+          {/* Auto-scrolling Projects Carousel */}
           <ProjectsCarousel projects={projects} scrollContainerRef={scrollContainerRef} />
 
+          {/* Centralized Expand Button */}
           <div className="flex justify-center mt-6">
             <button
               onClick={() => setSelectedProject(true)}
@@ -404,7 +465,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
     </main>
   );
 };
@@ -451,6 +511,7 @@ const ProjectCard = memo(({ name, description, image }) => {
   return (
     <div className="flex-shrink-0 w-80 group relative rounded-2xl overflow-hidden border border-cyan-600/30 bg-gradient-to-br from-slate-900/40 via-slate-800/25 to-cyan-900/15 backdrop-blur-xl shadow-[0_0_20px_-10px_rgba(56,189,248,0.4)] hover:border-sky-400/60 transition-all">
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(circle_at_30%_20%,rgba(56,189,248,0.15),transparent_70%)]" />
+
       <div className="relative h-40 w-full overflow-hidden">
         <img
           src={image}
@@ -460,6 +521,7 @@ const ProjectCard = memo(({ name, description, image }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/50 via-transparent to-transparent opacity-60 mix-blend-overlay" />
       </div>
+
       <div className="relative p-4">
         <h3 className="text-base font-semibold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-sky-300 via-cyan-200 to-blue-200">
           {name}
@@ -468,6 +530,7 @@ const ProjectCard = memo(({ name, description, image }) => {
           {description}
         </p>
       </div>
+
       <div className="absolute top-2 left-2 text-[10px] uppercase tracking-wider text-cyan-300/60">GP</div>
     </div>
   );
