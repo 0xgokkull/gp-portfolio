@@ -14,21 +14,21 @@ const ParticlesComponent = ({ id = "tsparticles", className = "" }) => {
   }, []);
 
   const particlesLoaded = (container) => {
-    console.log(container);
+    // Particles loaded
   };
 
   const options = useMemo(
     () => ({
-  // Darker background tone reinstated
-  background: { color: { value: "#070b12" } },
+      // Darker background tone reinstated
+      background: { color: { value: "#070b12" } },
       fpsLimit: 60,
       particles: {
         number: {
           value: 140, // reduce count (previous was 220)
           density: { enable: true, value_area: 1000 },
         },
-  // Lighter blue particle palette
-  color: { value: ["#bae6fd", "#a5f3fc", "#bfdbfe", "#e0f2fe"] }, // sky-200, cyan-200, blue-200, sky-100
+        // Lighter blue particle palette
+        color: { value: ["#bae6fd", "#a5f3fc", "#bfdbfe", "#e0f2fe"] }, // sky-200, cyan-200, blue-200, sky-100
         shape: { type: "circle" },
         opacity: {
           value: 0.75,
@@ -50,10 +50,10 @@ const ParticlesComponent = ({ id = "tsparticles", className = "" }) => {
           enable: true,
           speed: 0.75,
           direction: "none",
-            random: true,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
         },
       },
       interactivity: {
