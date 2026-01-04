@@ -24,31 +24,24 @@ const ParticlesComponent = ({ id = "tsparticles", className = "" }) => {
       fpsLimit: 60,
       particles: {
         number: {
-          value: 140, // reduce count (previous was 220)
-          density: { enable: true, value_area: 1000 },
+          value: 300,
+          density: { enable: true, value_area: 800 },
         },
-        // Lighter blue particle palette
-        color: { value: ["#bae6fd", "#a5f3fc", "#bfdbfe", "#e0f2fe"] }, // sky-200, cyan-200, blue-200, sky-100
+        color: { value: ["#ffffff", "#ffcc00", "#ff66cc", "#66ffff", "#99ccff"] }, // Multi-colored stars
         shape: { type: "circle" },
         opacity: {
-          value: 0.75,
+          value: 0.8,
           random: true,
-          anim: { enable: true, speed: 0.8, opacity_min: 0.12, sync: false },
+          anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false },
         },
         size: {
-          value: 3.6, // slightly larger for glow presence
+          value: 2,
           random: true,
-          anim: { enable: true, speed: 2.2, size_min: 0.6, sync: false },
-        },
-        shadow: {
-          enable: true,
-          color: "#7dd3fc", // cyan-300
-          blur: 6,
-          offset: { x: 0, y: 0 },
+          anim: { enable: true, speed: 3, size_min: 0.1, sync: false },
         },
         move: {
           enable: true,
-          speed: 0.75,
+          speed: 0.2, // Slower movement for deep space feel
           direction: "none",
           random: true,
           straight: false,

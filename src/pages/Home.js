@@ -65,32 +65,7 @@ const Home = () => {
   return (
     <main className="text-white overflow-x-hidden relative" onMouseMove={handleMouseMove}>
 
-      {/* GLOBAL BACKGROUND - Realistic Shooting Stars */}
-      <div className="fixed inset-0 -z-50 bg-[#020617] overflow-hidden">
-        {/* Static Stars */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 via-[#020617] to-[#020617]" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
-
-        {/* Shooting Stars Container */}
-        <div className="absolute inset-0 rotate-[20deg] opacity-60">
-          {shootingStars.map((star) => (
-            <div
-              key={star.id}
-              className="shooting-star"
-              style={{
-                left: star.left,
-                top: star.top,
-                animationDelay: star.animationDelay,
-                animationDuration: star.animationDuration,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Deep Space Glows */}
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/10 blur-[120px] rounded-full mix-blend-screen" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 blur-[120px] rounded-full mix-blend-screen" />
-      </div>
+      {/* GLOBAL BACKGROUND REMOVED - Using Particles + SolarSystem in App.js */}
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-[90vh] flex items-center justify-center px-6 md:px-12 xl:px-24 py-16 overflow-hidden">
