@@ -1,38 +1,15 @@
 import React from "react";
-import { Github, Linkedin, Mail, Twitter, Heart } from "lucide-react";
+import { Mail, Heart } from "lucide-react";
+import { socialLinks } from "../data";
 
 const Footer = () => {
-  const socialLinks = [
-    {
-      icon: Github,
-      href: "https://github.com/gokkull-15",
-      hoverColor: "hover:text-white",
-      bgHover: "hover:bg-gray-800",
-      tooltip: "GitHub Profile",
-    },
-    {
-      icon: Linkedin,
-      href: "https://www.linkedin.com/in/gokkull-s",
-      hoverColor: "hover:text-white",
-      bgHover: "hover:bg-blue-900",
-      tooltip: "LinkedIn Profile",
-    },
-    {
-      icon: Twitter,
-      href: "https://x.com/Gokkull15",
-      hoverColor: "hover:text-white",
-      bgHover: "hover:bg-blue-900",
-      tooltip: "Twitter Profile",
-    },
-  ];
-
   return (
-  <footer className="relative mt-20 backdrop-blur-xl border-t border-cyan-700/40 bg-[#0c1322]/80 supports-[backdrop-filter]:bg-[#0c1322]/60 shadow-[0_-2px_25px_-8px_rgba(56,189,248,0.35)] overflow-hidden z-30">
+    <footer className="relative mt-20 backdrop-blur-xl border-t border-cyan-700/40 bg-[#0c1322]/80 supports-[backdrop-filter]:bg-[#0c1322]/60 shadow-[0_-2px_25px_-8px_rgba(56,189,248,0.35)] overflow-hidden z-30">
       {/* Ambient gradient accents */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-  <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-[60%] h-40 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.25),transparent_70%)] opacity-40" />
-  <div className="absolute -bottom-12 -left-10 w-72 h-72 rounded-full bg-gradient-to-tr from-cyan-500/25 via-sky-500/20 to-blue-500/10 blur-3xl animate-[floatSlow_12s_ease-in-out_infinite]" />
-  <div className="absolute -top-14 -right-10 w-72 h-72 rounded-full bg-gradient-to-br from-sky-500/25 via-cyan-600/20 to-blue-500/10 blur-3xl animate-[floatSlow_14s_ease-in-out_infinite]" />
+        <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-[60%] h-40 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.25),transparent_70%)] opacity-40" />
+        <div className="absolute -bottom-12 -left-10 w-72 h-72 rounded-full bg-gradient-to-tr from-cyan-500/25 via-sky-500/20 to-blue-500/10 blur-3xl animate-[floatSlow_12s_ease-in-out_infinite]" />
+        <div className="absolute -top-14 -right-10 w-72 h-72 rounded-full bg-gradient-to-br from-sky-500/25 via-cyan-600/20 to-blue-500/10 blur-3xl animate-[floatSlow_14s_ease-in-out_infinite]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
@@ -48,14 +25,14 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-      <div className="text-xs sm:text-sm text-cyan-200/80 flex items-center justify-center w-full md:w-auto px-4 py-2 rounded-xl border border-cyan-700/30 bg-slate-900/30 backdrop-blur-md shadow-[0_0_14px_-6px_rgba(56,189,248,0.45)]">
+          <div className="text-xs sm:text-sm text-cyan-200/80 flex items-center justify-center w-full md:w-auto px-4 py-2 rounded-xl border border-cyan-700/30 bg-slate-900/30 backdrop-blur-md shadow-[0_0_14px_-6px_rgba(56,189,248,0.45)]">
             <span className="flex items-center gap-2">
               <span>&copy; {new Date().getFullYear()} GP</span>
-        <Heart size={16} className="text-sky-400 animate-pulse" />
+              <Heart size={16} className="text-sky-400 animate-pulse" />
             </span>
           </div>
 
-          {/* Social Links (unchanged position - last) */}
+          {/* Social Links */}
           <div className="flex space-x-4 w-full md:w-auto justify-center md:justify-end">
             {socialLinks.map(
               ({ icon: Icon, href, hoverColor, bgHover, tooltip }, index) => (
