@@ -193,7 +193,7 @@ const Home = ({ isProjectModalOpen, setIsProjectModalOpen }) => {
 
           <div className="flex justify-center mt-6">
             <button
-              onClick={() => setSelectedProject(true)}
+              onClick={() => setIsProjectModalOpen(true)}
               className="px-6 py-2.5 rounded-lg font-semibold text-sm bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-500 text-white shadow-lg transition-all"
             >
               View All Projects
