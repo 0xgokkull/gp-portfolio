@@ -10,6 +10,7 @@ import ShootingStars from "./components/ShootingStars";
 const App = () => {
   const [sceneryMode, setSceneryMode] = useState(false);
   const [countdown, setCountdown] = useState(10);
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
 
   // Handle closing the scenery mode
   const handleCloseScenery = () => {
