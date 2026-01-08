@@ -203,8 +203,8 @@ const Home = ({ isProjectModalOpen, setIsProjectModalOpen }) => {
       </section>
 
       {/* All Projects Modal */}
-      {selectedProject && (
-        <AllProjectsModal projects={projects} onClose={() => setSelectedProject(null)} />
+      {isProjectModalOpen && (
+        <AllProjectsModal projects={projects} onClose={() => setIsProjectModalOpen(false)} />
       )}
 
       {/* Resume Section */}
