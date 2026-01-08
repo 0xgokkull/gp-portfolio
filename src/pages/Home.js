@@ -16,8 +16,8 @@ const MemoizedTechstack = memo(Techstack);
 const MemoizedToolstack = memo(Toolstack);
 const MemoizedGithubStats = memo(GithubStats);
 
-const Home = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+const Home = ({ isProjectModalOpen, setIsProjectModalOpen }) => {
+  // const [selectedProject, setSelectedProject] = useState(null); // Local state removed
   const scrollContainerRef = useRef(null);
 
   // Refs for direct DOM manipulation (Performance Optimization)
