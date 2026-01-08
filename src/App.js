@@ -107,7 +107,10 @@ const App = () => {
           >
             {/* Single Page Content - No Navigation */}
             <div className="flex-grow relative z-10">
-              <HomePage />
+              <HomePage
+                isProjectModalOpen={isProjectModalOpen}
+                setIsProjectModalOpen={setIsProjectModalOpen}
+              />
             </div>
 
             {/* Footer */}
