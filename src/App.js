@@ -40,7 +40,7 @@ const App = () => {
 
       {/* View Scenery Button - Centered Top */}
       <AnimatePresence>
-        {!sceneryMode && (
+        {!sceneryMode && !isProjectModalOpen && (
           <div className="fixed top-0 left-0 w-full flex justify-center pt-6 z-50 pointer-events-none">
             <motion.button
               onClick={() => setSceneryMode(true)}
