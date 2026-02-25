@@ -7,7 +7,7 @@ import GithubStats from "./about/Github";
 import ProjectsCarousel from "../components/ProjectsCarousel";
 import AllProjectsModal from "../components/AllProjectsModal";
 import { socialLinks, projects } from "../data";
-import resumePDF from "../assets/gp-resume-june.pdf";
+import resumePDF from "../assets/resume.pdf";
 import "../shooting-stars.css";
 
 // Memoize imported components to prevent re-renders
