@@ -8,7 +8,6 @@ import ProjectsCarousel from "../components/ProjectsCarousel";
 import AllProjectsModal from "../components/AllProjectsModal";
 import { socialLinks, projects } from "../data";
 import resumePDF from "../assets/resume.pdf";
-import "../shooting-stars.css";
 
 // Memoize imported components to prevent re-renders
 const MemoizedAboutCard = memo(Aboutcard);
