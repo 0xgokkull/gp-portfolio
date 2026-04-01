@@ -4,7 +4,7 @@ import { Eye, X } from "lucide-react";
 import Footer from "./components/Footer";
 import HomePage from "./pages/Home";
 
-import SolarSystem from "./components/SolarSystem";
+import RealisticSolarSystem from "./components/RealisticSolarSystem";
 import ShootingStars from "./components/ShootingStars";
 
 const App = () => {
@@ -19,8 +19,8 @@ const App = () => {
   return (
     <div className="relative min-h-screen text-white flex flex-col overflow-hidden">
       {/* Fixed Deep Space Background */}
-      <div className="fixed inset-0 bg-[#020617] -z-20" />
-      <SolarSystem />
+      <div className="fixed inset-0 bg-[#020617] -z-30" />
+      <RealisticSolarSystem sceneryMode={sceneryMode} />
       <ShootingStars />
 
       {/* View Scenery Button - Centered Top */}
