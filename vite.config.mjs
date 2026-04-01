@@ -15,6 +15,10 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    outDir: "build",
+    chunkSizeWarningLimit: 1600,
+  },
   test: {
     environment: "jsdom",
     setupFiles: "./src/test/setup.js",
