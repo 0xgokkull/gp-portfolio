@@ -5,6 +5,8 @@
   "dependencies": {
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/thumbnail": "^3.12.0",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "@tsparticles/all": "^3.7.1",
     "@tsparticles/react": "^3.0.0",
     "axios": "^1.7.9",
@@ -20,7 +22,8 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
     "react-pdf": "^9.1.1",
-    "react-tsparticles": "^2.12.2"
+    "react-tsparticles": "^2.12.2",
+    "three": "^0.183.2"
   },
   "scripts": {
     "dev": "vite",
