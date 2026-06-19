@@ -20,7 +20,7 @@ const Home = ({ isProjectModalOpen, setIsProjectModalOpen }) => {
   const scrollContainerRef = useRef(null);
 
   // Refs for direct DOM manipulation (Performance Optimization)
-  const titleRef = useRef(null);
+  const titleRef = useRef([]);
   const glowRef = useRef(null);
   const descriptionRef = useRef(null);
 
@@ -48,8 +48,21 @@ const Home = ({ isProjectModalOpen, setIsProjectModalOpen }) => {
         const moveX = (clientX - window.innerWidth / 2) / 25;
         const moveY = (clientY - window.innerHeight / 2) / 25;
 
-        if (titleRef.current) {
-          titleRef.current.style.transform = `rotateX(${moveY * 0.5}deg) rotateY(${moveX * 0.5}deg)`;
+        if (titleRef.current && titleRef.current.length > 0) {
+          titleRef.current.forEach((layer, index) => {
+            if (layer) {
+              if (index === 3) {
+                // Keep the front layer completely fixed
+                layer.style.transform = 'none';
+                return;
+              }
+              // Back layers move more opposite to the mouse direction.
+              const distance = 5 - index;
+              const x = -(clientX - window.innerWidth / 2) / window.innerWidth * distance * 30;
+              const y = -(clientY - window.innerHeight / 2) / window.innerHeight * distance * 30;
+              layer.style.transform = `translate(${x}px, ${y}px) rotateX(${moveY * 0.5}deg) rotateY(${moveX * 0.5}deg)`;
+            }
+          });
         }
         if (glowRef.current) {
           glowRef.current.style.transform = `translate(${moveX * 2}px, ${moveY * 2}px)`;
@@ -71,17 +84,31 @@ const Home = ({ isProjectModalOpen, setIsProjectModalOpen }) => {
         <div className="w-full max-w-5xl mx-auto flex flex-col items-center justify-center text-center z-10">
 
           {/* Title */}
-          <div className="relative mb-8 perspective-text group">
-            <h1
-              ref={titleRef}
-              className="relative text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-gray-400 select-none transition-transform duration-75 ease-out hover:scale-[1.02]"
-              style={{ textShadow: '0 0 30px rgba(255,255,255,0.1)' }}
-            >
-              GOKUL PRIYAN
-            </h1>
+          <div className="relative mb-8 perspective-text group w-full flex justify-center items-center h-20 sm:h-28 md:h-36">
+            {[...Array(4)].map((_, i) => {
+              const isFront = i === 3;
+              return (
+                <h1
+                  key={i}
+                  ref={(el) => (titleRef.current[i] = el)}
+                  className={`absolute text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter select-none transition-transform duration-700 ease-out ${
+                    isFront
+                      ? "text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-gray-400 hover:scale-[1.02]"
+                      : "text-transparent"
+                  }`}
+                  style={{
+                    WebkitTextStroke: isFront ? "0px" : "1.5px rgba(6, 182, 212, 0.4)",
+                    zIndex: i,
+                    textShadow: isFront ? "0 0 30px rgba(255,255,255,0.1)" : "none",
+                  }}
+                >
+                  GOKUL PRIYAN
+                </h1>
+              );
+            })}
             <div
               ref={glowRef}
-              className="absolute -inset-10 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-blue-500/0 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+              className="absolute -inset-10 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-blue-500/0 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
             />
           </div>
 

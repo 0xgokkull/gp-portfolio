@@ -22,6 +22,7 @@ import ipfs from "../assets/pinata-ipfs.jpeg";
 import firm from "../assets/firm.png";
 import ava from "../assets/ava.png";
 import ghostpic from "../assets/ghostpic.png";
+import hubive from "../assets/hubive.png";
 
 // Social Links - used in Hero section and Footer
 export const socialLinks = [
@@ -50,6 +51,12 @@ export const socialLinks = [
 
 // Projects data
 export const projects = [
+    {
+        name: "Hubive",
+        description: "Hubive Platform",
+        link: "https://hubive.in",
+        image: hubive,
+    },
     {
         name: "GhostPic",
         description: "A decentralized civic platform for anonymous communication",
